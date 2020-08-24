@@ -1,3 +1,4 @@
+import pyttsx
 print("Welcome to python World\n");
 user1=input("Enter A Number For Your Table")
 store={
@@ -14,5 +15,10 @@ store={
 }
 text=""
 for i in range(1,11):
-    i=i*user1
-    print(i)
+    mult=i*int(user1)
+    text+=str(i)+" "+store[user1]+ " are "+ " "+str(mult)+"\n"
+print(text)
+
+engine = pyttsx.init()
+engine.say(text)
+engine.runAndWait()
